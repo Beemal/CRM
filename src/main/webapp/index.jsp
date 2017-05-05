@@ -11,7 +11,6 @@
 </head>
 <body>
 <%@include file="/WEB-INF/header.jsp" %>
-
 <div id="firstPart" xmlns="http://www.w3.org/1999/html">
     <div class="row">
         <div class="col-md-12">
@@ -270,9 +269,9 @@
         <div class="col-md-4">
             <h4 style="text-align: center; font-style: italic; font-weight: bolder; color: #ffa100">SITE MAP<h4>
                 <ul style="text-align: center; list-style-type: square; color:#b1b1b1;">
-                    <li><a href="<?php echo Yii::app()->Controller->createUrl('site/index');?>">Home</a></li><hr style="border-color: #000000">
-                    <li><a href="<?php echo Yii::app()->Controller->createUrl('customers/create');?>">Sign Up</a></li><hr style="border-color: #000000">
-                    <li><a href="<?php echo Yii::app()->Controller->createUrl('CrmLogin/create');?>">Login</a></li><hr style="border-color: #000000">
+                    <li><a href="">Home</a></li><hr style="border-color: #000000">
+                    <li><a href="">Sign Up</a></li><hr style="border-color: #000000">
+                    <li><a href="">Login</a></li><hr style="border-color: #000000">
                 </ul>
         </div>
         <div class="col-md-4">
