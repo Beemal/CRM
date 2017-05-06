@@ -27,28 +27,28 @@
                 <div class="carousel-inner">
 
                     <div class="item active">
-                        <img src="<c:url value="resources/images/slide_img/slide1.png"/>" alt="..."/>
+                        <img src="<c:url value="resources/images/slide_img/slide1.jpg"/>" alt="..."/>
 
                         <div class="carousel-caption">
 <!--                            <h3>backgroundImage1</h3>-->
-                            <a href="/crm/CrmLogin/create">  <button class="btn btn-success btn-lg" style="margin-right: 10px;">Log In</button></a>
-                            <a href="/crm/customers/create">  <button class="btn btn-success btn-lg">Sign Up</button></a>
+                            <a href="loginPage">  <button class="btn btn-success btn-lg" style="margin-right: 10px;">Log In</button></a>
+                            <a href="register">  <button class="btn btn-success btn-lg">Sign Up</button></a>
                         </div>
                     </div>
                     <div class="item">
                         <img src="<c:url value="resources/images/slide_img/slide2.jpg"/>" alt="...">
 
                         <div class="carousel-caption">
-                            <a href="/crm/CrmLogin/create">  <button class="btn btn-success btn-lg" style="margin-right: 10px;">Log In</button></a>
-                            <a href="/crm/customers/create">  <button class="btn btn-success btn-lg">Sign Up</button></a>
+                            <a href="loginPage">  <button class="btn btn-success btn-lg" style="margin-right: 10px;">Log In</button></a>
+                            <a href="register">  <button class="btn btn-success btn-lg">Sign Up</button></a>
                         </div>
                     </div>
                     <div class="item">
                         <img src="<c:url value="resources/images/slide_img/slide3.jpg"/>" alt="...">
 
                         <div class="carousel-caption">
-                            <a href="/crm/CrmLogin/create">  <button class="btn btn-success btn-lg" style="margin-right: 10px;">Log In</button></a>
-                            <a href="/crm/customers/create">  <button class="btn btn-success btn-lg">Sign Up</button></a>
+                            <a href="loginPage">  <button class="btn btn-success btn-lg" style="margin-right: 10px;">Log In</button></a>
+                            <a href="register">  <button class="btn btn-success btn-lg">Sign Up</button></a>
                         </div>
                     </div>
 
@@ -117,7 +117,7 @@
                                            <div class="modal-dialog">
                                                <div class="modal-content">
                                                    <div class="modal-header">
-                                                       <h2>WHY POLYGO  CRM?</h2>
+                                                       <h2>WHY CRM?</h2>
                                                    </div>
                                                    <div class="modal-body">
                                                        <h3 style="font-weight: bolder;">1. Be organized</h3>

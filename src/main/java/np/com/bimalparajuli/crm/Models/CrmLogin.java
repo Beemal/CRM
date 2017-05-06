@@ -3,7 +3,16 @@ package np.com.bimalparajuli.crm.Models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
+
+@NamedQueries({
+	@NamedQuery(
+			name = "CrmLogin.findByUsername",
+			query = "SELECT c FROM CrmLogin c WHERE c.email = :email"
+	)
+})
 
 @Entity
 public class CrmLogin {

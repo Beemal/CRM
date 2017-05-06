@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import np.com.bimalparajuli.crm.Models.Crm;
 import np.com.bimalparajuli.crm.Models.CrmLogin;
 import np.com.bimalparajuli.crm.Models.CrmUser;
+import np.com.bimalparajuli.crm.Service.CrmEmailAPI;
 import np.com.bimalparajuli.crm.Service.RegisterService;
 
 @Controller
@@ -20,6 +22,9 @@ public class Register {
 	
 	@Autowired
 	RegisterService registerService;
+	
+	@Autowired
+	CrmEmailAPI crmEmailApi;
 	
 	 @RequestMapping(value = "/register", method = RequestMethod.GET)
 	    public String register(Model model){
@@ -53,14 +58,22 @@ public class Register {
 		 crmLogin.setRole("Admin");
 
 		 
-		 model.addAttribute("email", email);
+//		 model.addAttribute("email", email);
 		 registerService.createAccount(crm, crmUser, crmLogin);
-		 return "confirm";
+		 return this.sendVerifier(email, model);
 	 }
-	 @RequestMapping("register/sendVerifier")
+	 @RequestMapping("/register/sendVerifier")
 	 public String sendVerifier(@RequestParam("email") String email, ModelMap model){
-		 
-		 model.addAttribute("email", email);
-		 return "confirm";
+		
+		String toAddr = email;
+		
+		// email subject
+		String subject = "Hey.. This email sent by CRM Spring MVC Tutorial";
+	 
+		// email body
+		String body = "There you go.. You got an email.. Let's understand details on how Spring MVC works -- By CRM Admin";
+		crmEmailApi.crmReadyToSendEmail(toAddr, subject, body);
+		model.addAttribute("email", email);
+		return "confirm";
 	 }
 }

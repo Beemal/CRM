@@ -29,7 +29,7 @@
             <p class="spacer"><b>We sent a confirmation email to <b>${email}</b>.</b></p>
             <p>Check your inbox to activate your CRM account.</p>
             <p>If you can't see an email from us in his inbox,
-                <a href="register/sendVerifier">send the confirmation email again</a>.
+                <a href="<c:url value='register/sendVerifier?email=${email}' />">send the confirmation email again</a>.
                 If it was sent to the wrong email address, click the back button and enter the correct email address.</p>
 
         </div>
