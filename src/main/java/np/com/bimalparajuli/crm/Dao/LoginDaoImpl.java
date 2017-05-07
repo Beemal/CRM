@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import np.com.bimalparajuli.crm.Models.CrmLogin;
+import np.com.bimalparajuli.crm.Models.CrmUser;
 
 
 @Repository("loginDao")
@@ -22,6 +23,17 @@ public class LoginDaoImpl extends AbstractDao<Integer, CrmLogin> implements Logi
 			 return true;
 		 }
 		return false;
+	}
+
+	public CrmUser getUserByEmail(String email) {
+		CrmLogin crmLogin = (CrmLogin) createNamedEntityQuery("CrmLogin.findByUsername")
+                .setParameter("email", email)
+                .uniqueResult();
+		
+		CrmUser user =  (CrmUser) createNamedEntityQuery("CrmUser.findByCrmLoginId")
+				.setParameter("id", crmLogin.getId())
+				.uniqueResult();
+		return user;
 	}
 
 }

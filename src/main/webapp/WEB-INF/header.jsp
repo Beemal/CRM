@@ -14,14 +14,28 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+     
+       <c:choose>
+      	<c:when test="${empty email}">
+         <ul class="nav navbar-nav">
+         <a class="navbar-brand" href="/crm">CRM</a>
+        </ul>
+      </c:when>
+      <c:otherwise>
+      <ul class="nav navbar-nav">
       <a class="navbar-brand" href="/crm">CRM</a>
+       <li class=${homeActive }><a href="/crm/loginPage">HOME <span class="sr-only">(current)</span></a></li>
+       <li class=${profileActive }><a href="/crm/profile">PROFILE <span class="sr-only">(current)</span></a></li>
+       </ul>
+       </c:otherwise>
+       </c:choose>
     </div>
 
 	<c:if test="${empty email}">
    <!-- Search form -->
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" role="search" action="https://www.google.com" target=_blank>
         <div class="form-group">
-          <input type="text" class="form-control" name="q" placeholder="Google Search">
+          <input type="text" class="form-control" name="q" value="" placeholder="Google Search">
         </div>
         <button type="submit" class="btn btn-default">Search</button>
       </form> 
@@ -34,7 +48,8 @@
        		<li><a href="loginPage">Login</a></li>
        		</c:when>
        		<c:otherwise>
-       		<li><a href="logout">Logout</a></li>
+       		<li><a href="profile"><span class="glyphicon glyphicon-user"></span> ${user.name}</a></li>
+       		<li><a href="logout"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
        		</c:otherwise>
        		</c:choose>
       </ul>
