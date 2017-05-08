@@ -1,5 +1,7 @@
 package np.com.bimalparajuli.crm.Dao;
 
-public interface ProfileDao {
+import np.com.bimalparajuli.crm.Models.CrmUser;
 
+public interface ProfileDao {
+	public CrmUser saveFileToUser(CrmUser user);
 }

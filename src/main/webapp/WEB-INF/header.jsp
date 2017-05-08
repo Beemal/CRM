@@ -17,13 +17,11 @@
      
        <c:choose>
       	<c:when test="${empty email}">
-         <ul class="nav navbar-nav">
-         <a class="navbar-brand" href="/crm">CRM</a>
-        </ul>
+      	<a class="navbar-brand" href="/crm">CRM</a>
       </c:when>
       <c:otherwise>
-      <ul class="nav navbar-nav">
       <a class="navbar-brand" href="/crm">CRM</a>
+      <ul class="nav navbar-nav">
        <li class=${homeActive }><a href="/crm/loginPage">HOME <span class="sr-only">(current)</span></a></li>
        <li class=${profileActive }><a href="/crm/profile">PROFILE <span class="sr-only">(current)</span></a></li>
        </ul>
@@ -48,6 +46,7 @@
        		<li><a href="loginPage">Login</a></li>
        		</c:when>
        		<c:otherwise>
+       		<% session.getAttribute("user"); %>
        		<li><a href="profile"><span class="glyphicon glyphicon-user"></span> ${user.name}</a></li>
        		<li><a href="logout"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
        		</c:otherwise>

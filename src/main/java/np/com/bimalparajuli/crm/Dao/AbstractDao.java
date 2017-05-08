@@ -35,6 +35,9 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 		return (T) getSession().get(persistentClass, key);
 	}
 
+	public void persist(T entity){
+		getSession().persist(entity);
+	}
 	public void persist(T entity, CrmUser crmUser, CrmLogin crmLogin) {
 		getSession().persist(entity);
 		getSession().persist(crmUser);

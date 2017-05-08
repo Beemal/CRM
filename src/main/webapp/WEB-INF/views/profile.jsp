@@ -12,17 +12,35 @@
 	<div class="row col-sm-12">
 		<div cass="col-sm-4">
 			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail"> <img src="<c:url value='' />"
+				<a href="#" class="thumbnail"> <img src="<c:url value='${user.photo }' />"
 					alt="Profile Pic" style="width: 171px; height: 180px;">
 				</a>
 
-				<form action="UploadServlet" method="post"
+				<form action="profile/upload" method="post"
 					enctype="multipart/form-data">
-					<input type="file" name="file" size="50" /> <br /> <input
-						type="submit" value="Upload File" />
+					<span class="btn btn-file"><input type="file" value="Browse" /><br />
+					<input type="submit" value="Upload" /></span>
 				</form>
 			</div>
 		</div>
+		
+		<h2>Submitted File</h2>
+<table>
+    <tr>
+        <td>OriginalFileName:</td>
+        <td>${file.originalFilename}</td>
+       
+    </tr>
+    <tr>
+        <td>Type:</td>
+        <td>${file.contentType}</td>
+       
+    </tr>
+    <tr>
+        <td>Url from session:</td>
+        <td>${user.photo }</td>
+    </tr>
+</table>
 	</div>
 </body>
 </html>

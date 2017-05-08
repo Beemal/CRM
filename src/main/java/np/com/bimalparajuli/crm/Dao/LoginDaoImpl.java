@@ -19,7 +19,7 @@ public class LoginDaoImpl extends AbstractDao<Integer, CrmLogin> implements Logi
 		 CrmLogin crmLogin = (CrmLogin) createNamedEntityQuery("CrmLogin.findByUsername")
 	                .setParameter("email", user)
 	                .uniqueResult();
-		 if(crmLogin != null){
+		 if(crmLogin != null && pass.equals(crmLogin.getPassword())){
 			 return true;
 		 }
 		return false;

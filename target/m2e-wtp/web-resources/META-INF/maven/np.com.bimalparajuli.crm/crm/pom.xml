@@ -36,6 +36,14 @@
 			<artifactId>mail</artifactId>
 			<version>1.4.7</version>
 	</dependency>
+
+	<!-- File Upload Dependency -->
+	<dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>1.3.1</version>
+	</dependency>
+	
 		
     <dependency>
       <groupId>org.springframework</groupId>

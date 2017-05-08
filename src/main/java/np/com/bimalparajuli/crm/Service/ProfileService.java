@@ -1,5 +1,7 @@
 package np.com.bimalparajuli.crm.Service;
 
-public interface ProfileService {
+import np.com.bimalparajuli.crm.Models.CrmUser;
 
+public interface ProfileService {
+	public CrmUser saveFileToUser(CrmUser user);
 }

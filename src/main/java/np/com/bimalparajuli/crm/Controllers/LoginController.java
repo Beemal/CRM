@@ -33,11 +33,9 @@ public class LoginController {
 	public String verifyLogin(@RequestParam String email, @RequestParam String password, HttpSession session,
 			Model model) {
 			if (loginService.validateLogin(email, password)) {
-				session.setAttribute("email", email);
 				CrmUser user = loginService.getUserByEmail(email);
 				session.setAttribute("user", user);
-				session.removeAttribute("profileActivity");
-				session.setAttribute("homeActivity", "active");
+				session.setAttribute("email", user.getName());
 				return "homePage";
 			}else{ 
 				model.addAttribute("error", true);
@@ -48,6 +46,8 @@ public class LoginController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session, Model model) {
 		session.removeAttribute("email");
+		session.removeAttribute("user");
+		session.invalidate();
 		model.addAttribute("logout", true);
 		return "loginPage";
 	}

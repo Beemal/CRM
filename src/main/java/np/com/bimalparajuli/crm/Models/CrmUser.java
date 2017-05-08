@@ -15,6 +15,10 @@ import javax.persistence.TemporalType;
 	@NamedQuery(
 			name = "CrmUser.findByCrmLoginId",
 			query = "SELECT c FROM CrmUser c WHERE c.id = :id"
+	),
+	@NamedQuery(
+			name = "CrmUser.findById",
+			query = "SELECT c FROM CrmUser c WHERE c.id = :id"
 	)
 })
 @Entity
